@@ -1,9 +1,10 @@
 "use client";
 
+import * as SX from "./_page.sx";
 import { getTestData } from "@/lib/api-endpoints";
-import styles from "./page.module.css";
 import { useGetTestQuery } from "@/services/api";
 import { useEffect } from "react";
+import { Box, Button } from "@mui/material";
 
 const TestPage = () => {
   // пример загрузки данных черех RTK Query
@@ -24,12 +25,12 @@ const TestPage = () => {
   };
 
   return (
-    <div className={styles.page}>
+    <Box sx={SX.CONTAINER}>
       {/* <Preloader /> */}
-      <button type="button" onClick={fetchData}>
+      <Button type="button" onClick={fetchData}>
         Получить данные
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 };
 

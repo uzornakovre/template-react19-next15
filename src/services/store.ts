@@ -1,13 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import alertsSlice from "./alerts/alerts-slice";
+import themeSlice from "./theme/theme-slice";
 import { api } from "./api";
 
 const store = configureStore({
   reducer: {
     alerts: alertsSlice,
+    theme: themeSlice,
     [api.reducerPath]: api.reducer,
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(api.middleware),
 });
 

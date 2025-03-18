@@ -1,10 +1,11 @@
-import styles from "./_feedback.module.scss";
+import { Box, CircularProgress } from "@mui/material";
+import { PRELOADER_OVERLAY } from "./_feedback.style";
 
 const Preloader = () => {
   return (
-    <div className={styles.preloaderOverlay}>
-      <div className={styles.preloader} />
-    </div>
+    <Box sx={PRELOADER_OVERLAY}>
+      <CircularProgress size={50} disableShrink sx={{ color: "#FFF" }} />
+    </Box>
   );
 };
 
